@@ -9,9 +9,9 @@ import java.util.function.Consumer;
 
 public class CheckAmmunition<A extends Gun> {
     private static Logger logger = LogManager.getLogger(Runner.class.getName());
-    private A status;
-    private A low;
-    private A high;
+    A status;
+    A low;
+    A high;
     Consumer<Integer> rounds = i -> {
         if(i <= 0){
             logger.info("No ammunition");
