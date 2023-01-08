@@ -18,7 +18,7 @@ public class SuppliesNeeded extends Thread {
                 logger.info("%s: %s%n", Thread.currentThread().getName(), average[i]);
             }
         } catch (InterruptedException e) {
-            logger.info("Thread not finished");
+            logger.error("Thread not finished");
         }
     }
 }

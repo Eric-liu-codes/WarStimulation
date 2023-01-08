@@ -26,12 +26,12 @@ public class Runner {
         try{
             Captain newCaptain = new Captain("Aaron","Zhang",27,5,150);
         } catch (NoNameException e){
-            logger.info("No name or Invalid name");
+            logger.error("No name or Invalid name");
         }
         try{
             Colonel newColonel = new Colonel("Mason","Zoe",35,9,2000);
         } catch (NoNameException e){
-            logger.info("No name or Invalid name");
+            logger.error("No name or Invalid name");
         }
 
         LinkedList<String> ranks = new LinkedList<String>();

@@ -22,7 +22,7 @@ public class Command implements Runnable {
                 logger.info("%s: %s%n", Thread.currentThread().getName(), soldierUnderCommand[i]);
             }
         } catch (InterruptedException e) {
-            logger.info("Thread not finished");
+            logger.error("Thread not finished");
         }
     }
 }
