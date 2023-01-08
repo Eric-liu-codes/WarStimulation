@@ -1,18 +1,23 @@
 package com.solvd.army.weapon;
 
+import com.solvd.army.exceptions.InvalidAmmunitionException;
 import com.solvd.army.position.Operator;
 
-public class Submarine {
+public class Submarine extends Weapon{
     private int loadCapacity;
     private int numOfRockets;
     private int numOfSoldiers;
-    private Operator operator;
 
-    public Submarine(int loadCapacity, int numOfRockets, int numOfSoldiers, Operator operator) {
+    public Submarine(String ammunition, int rounds, String weaponName, Operator operator,
+            int loadCapacity, int numOfRockets, int numOfSoldiers)
+            throws InvalidAmmunitionException {
+        super(ammunition, rounds, weaponName, operator);
         this.loadCapacity = loadCapacity;
         this.numOfRockets = numOfRockets;
         this.numOfSoldiers = numOfSoldiers;
-        this.operator = operator;
+        if(ammunition == null){
+            throw new InvalidAmmunitionException("Invalid Ammunition");
+        }
     }
 
     public int getLoadCapacity() {
@@ -37,13 +42,5 @@ public class Submarine {
 
     public void setNumOfSoldiers(int numOfSoldiers) {
         this.numOfSoldiers = numOfSoldiers;
-    }
-
-    public Operator getOperator() {
-        return operator;
-    }
-
-    public void setOperator(Operator operator) {
-        this.operator = operator;
     }
 }

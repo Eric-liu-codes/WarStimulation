@@ -3,29 +3,18 @@ package com.solvd.army.weapon;
 import com.solvd.army.exceptions.InvalidAmmunitionException;
 import com.solvd.army.position.Operator;
 
-public class Aircraft {
-    private Operator operator;
+public class Aircraft extends Weapon {
     private String engine;
     private int numOfRockets;
-    private String ammunition;
 
-    public Aircraft(Operator operator, String engine, int numOfRockets, String ammunition)
+    public Aircraft(String ammunition, int rounds, String weaponName, Operator operator, String engine, int numOfRockets)
             throws InvalidAmmunitionException{
-        this.operator = operator;
+        super(ammunition, rounds, weaponName, operator);
         this.engine = engine;
         this.numOfRockets = numOfRockets;
-        this.ammunition = ammunition;
-        if(this.ammunition == null){
+        if(ammunition == null){
             throw new InvalidAmmunitionException("Invalid Ammunition");
         }
-    }
-
-    public Operator getOperator() {
-        return operator;
-    }
-
-    public void setOperator(Operator operator) {
-        this.operator = operator;
     }
 
     public String getEngine() {
@@ -42,13 +31,5 @@ public class Aircraft {
 
     public void setNumOfRockets(int numOfRockets) {
         this.numOfRockets = numOfRockets;
-    }
-
-    public String getAmmunition() {
-        return ammunition;
-    }
-
-    public void setAmmunition(String ammunition) {
-        this.ammunition = ammunition;
     }
 }

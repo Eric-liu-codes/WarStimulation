@@ -3,7 +3,7 @@ import java.util.Objects;
 
 public class Lieutenant extends ArmyRanks {
     public Lieutenant(String fName, String lName, int age, int yearsOfExperience, int soldiersUnderCommand) {
-        super(fName, lName, age, yearsOfExperience);
+        super(fName, lName, age, yearsOfExperience, soldiersUnderCommand);
     }
 
     @Override

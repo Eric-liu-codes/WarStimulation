@@ -12,7 +12,7 @@ public class Colonel extends ArmyRanks {
     private static Logger logger = LogManager.getLogger(Runner.class.getName());
     public Colonel(String fName, String lName, int age, int yearsOfExperience, int soldiersUnderCommand)
             throws NoNameException {
-        super(fName, lName, age, yearsOfExperience);
+        super(fName, lName, age, yearsOfExperience, soldiersUnderCommand);
         if(fName == null || lName == null){
             logger.info("No name or Invalid name");
             throw new NoNameException("Invalid/No Name");

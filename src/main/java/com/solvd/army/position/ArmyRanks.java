@@ -5,12 +5,17 @@ public abstract class ArmyRanks {
     private String lName;
     private int age;
     private int yearsOfExperience;
+    private int soldiersUnderCommand;
 
-    public ArmyRanks(String fName, String lName, int age, int yearsOfExperience) {
+    public ArmyRanks(String fName, String lName, int age, int yearsOfExperience, int soldiersUnderCommand) {
         this.fName = fName;
         this.lName = lName;
         this.age = age;
         this.yearsOfExperience = yearsOfExperience;
+        this.soldiersUnderCommand = soldiersUnderCommand;
+    }
+
+    public ArmyRanks(String fName, String lName, int age, int yearsOfExperience) {
     }
 
     public String getfName() {

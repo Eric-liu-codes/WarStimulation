@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public final class General extends ArmyRanks {
     public General(String fName, String lName, int age, int yearsOfExperience, int soldiersUnderCommand){
-        super(fName, lName, age, yearsOfExperience);
+        super(fName, lName, age, yearsOfExperience, soldiersUnderCommand);
     }
 
     @Override
