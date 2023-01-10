@@ -1,6 +1,6 @@
 package com.solvd.army.position;
 
-import com.solvd.army.IOperateAircraft;
+import com.solvd.army.interfaces.IOperateAircraft;
 
 import java.util.Objects;
 

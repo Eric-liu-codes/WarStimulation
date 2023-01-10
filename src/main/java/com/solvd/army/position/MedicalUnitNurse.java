@@ -1,6 +1,6 @@
 package com.solvd.army.position;
 
-import com.solvd.army.IUseMedicalDevice;
+import com.solvd.army.interfaces.IUseMedicalDevice;
 
 import java.util.Objects;
 

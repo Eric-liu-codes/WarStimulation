@@ -1,5 +1,5 @@
 package com.solvd.army.position;
-import com.solvd.army.IOperateSubmarines;
+import com.solvd.army.interfaces.IOperateSubmarines;
 
 import java.util.Objects;
 

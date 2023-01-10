@@ -1,4 +1,4 @@
-package com.solvd.army;
+package com.solvd.army.interfaces;
 
 public interface IOperateSubmarines {
     double minSpeed = 0.0;

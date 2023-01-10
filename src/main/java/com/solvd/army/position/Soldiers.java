@@ -1,5 +1,5 @@
 package com.solvd.army.position;
-import com.solvd.army.IUseGun;
+import com.solvd.army.interfaces.IUseGun;
 import com.solvd.army.Runner;
 import org.apache.logging.log4j.*;
 import java.util.Objects;

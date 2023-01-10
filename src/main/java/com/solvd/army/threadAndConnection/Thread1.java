@@ -1,10 +1,10 @@
-package com.solvd.army.threads;
+package com.solvd.army.threadAndConnection;
 
 import com.solvd.army.Runner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Command implements Runnable {
+public class Thread1 implements Runnable {
     private static Logger logger = LogManager.getLogger(Runner.class.getName());
     @Override
     public void run() {

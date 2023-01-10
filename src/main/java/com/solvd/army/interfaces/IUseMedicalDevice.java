@@ -1,4 +1,4 @@
-package com.solvd.army;
+package com.solvd.army.interfaces;
 
 public interface IUseMedicalDevice {
     void turnOnMachine(boolean machineOn);

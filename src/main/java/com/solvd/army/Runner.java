@@ -3,8 +3,10 @@ package com.solvd.army;
 import com.solvd.army.lambda.ApplyRanks;
 import com.solvd.army.lambda.CheckAmmunition;
 import com.solvd.army.lambda.OfficialRanks;
-import com.solvd.army.threads.Command;
-import com.solvd.army.threads.SuppliesNeeded;
+import com.solvd.army.threadAndConnection.Connection;
+import com.solvd.army.threadAndConnection.ConnectionPool;
+import com.solvd.army.threadAndConnection.Thread1;
+import com.solvd.army.threadAndConnection.Thread2;
 import com.solvd.army.country.Ally;
 import com.solvd.army.country.Enemy;
 import com.solvd.army.exceptions.NoNameException;
@@ -17,13 +19,14 @@ import com.solvd.army.position.*;
 import org.apache.logging.log4j.*;
 
 import java.util.ArrayList;
+import java.util.concurrent.CompletableFuture;
 
 public class Runner {
     private static Logger logger = LogManager.getLogger(Runner.class.getName());
     public final static void main(String[] args){
 
-        new Thread(new Command()).start();
-        new SuppliesNeeded().start();
+        new Thread(new Thread1()).start();
+        new Thread2().start();
 
         General newGeneral = new General("Eric","Liu",49,19,30000);
         try{
@@ -60,6 +63,9 @@ public class Runner {
                 logger.info(ranks);
             }
         };
+
+        ConnectionPool connectionPool = ConnectionPool.getInstance();
+        CompletableFuture<Connection> futureTemp = connectionPool.getConnection();
 
         LinkedList<String> armyRanks = new LinkedList<String>();
         ranks.add("Captain"); ranks.add("Colonel"); ranks.add("General"); ranks.add("Intelligence Team");

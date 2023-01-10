@@ -1,6 +1,6 @@
 package com.solvd.army.position;
 
-import com.solvd.army.IOperateTank;
+import com.solvd.army.interfaces.IOperateTank;
 import com.solvd.army.Runner;
 import com.solvd.army.exceptions.NoNameException;
 
