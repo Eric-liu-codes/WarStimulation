@@ -1,6 +1,6 @@
 package com.solvd.army.enums;
 
-public enum OfficialRanks {
+public enum OfficialPositions {
     CAPTAIN("Commands 3-5 Platoons, or 60-200 Soldiers"),
     COLONEL("Commands 3 or more Battalions, or 1500-3200 Soldiers"),
     GENERAL("Commands 3 Brigades, or 10000-16000 Soldiers"),
@@ -15,7 +15,7 @@ public enum OfficialRanks {
 
     private String task;
 
-    OfficialRanks(String task){}
+    OfficialPositions(String task){}
 
     public String getTask() {
         return task;

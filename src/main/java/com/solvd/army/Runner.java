@@ -1,5 +1,8 @@
 package com.solvd.army;
 
+import com.solvd.army.lambda.ApplyRanks;
+import com.solvd.army.lambda.CheckAmmunition;
+import com.solvd.army.lambda.OfficialRanks;
 import com.solvd.army.threads.Command;
 import com.solvd.army.threads.SuppliesNeeded;
 import com.solvd.army.country.Ally;
@@ -13,7 +16,7 @@ import com.solvd.army.position.*;
 
 import org.apache.logging.log4j.*;
 
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Runner {
     private static Logger logger = LogManager.getLogger(Runner.class.getName());
@@ -34,7 +37,31 @@ public class Runner {
             logger.error("No name or Invalid name");
         }
 
-        LinkedList<String> ranks = new LinkedList<String>();
+        //Demo for ApplyRanks functional interface
+        ApplyRanks<String, Integer> applyFunction = s -> s.length();
+        int length = applyFunction.apply("General");
+        logger.info(length);
+
+        //Demo for CheckAmmunition
+        CheckAmmunition<String> stringEmptyFunction = s -> s.isEmpty();
+        boolean isEmpty = stringEmptyFunction.emptyAmmunition("");
+        logger.info(isEmpty);
+
+        //Demo for OfficialRanks
+        ArrayList<String> ranks = new ArrayList<>();
+        ranks.add("Captain");
+        ranks.add("Colonel");
+        ranks.add("General");
+        ranks.add("Lieutenant");
+        ranks.add("Major");
+        ranks.add("Sergeant");
+        OfficialRanks printRanksFunction = r -> {
+            for (Object rank : r) {
+                logger.info(ranks);
+            }
+        };
+
+        LinkedList<String> armyRanks = new LinkedList<String>();
         ranks.add("Captain"); ranks.add("Colonel"); ranks.add("General"); ranks.add("Intelligence Team");
         ranks.add("Lieutenant"); ranks.add("Major"); ranks.add("Medical Doctor"); ranks.add("Medical Nurse");
         ranks.add("Sergeant"); ranks.add("Soldier");
