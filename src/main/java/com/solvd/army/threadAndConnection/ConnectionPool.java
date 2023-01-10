@@ -11,7 +11,7 @@ public class ConnectionPool {
 
     private static Logger logger = LogManager.getLogger(Runner.class.getName());
     private LinkedBlockingQueue<Connection> connections;
-    private static ConnectionPool instance;
+    private static ConnectionPool lazy;
 
     public ConnectionPool(int poolSize) {
         connections = new LinkedBlockingQueue<>(poolSize);
@@ -21,11 +21,11 @@ public class ConnectionPool {
     }
 
     public static synchronized ConnectionPool getInstance() {
-        if (instance == null) {
-            instance = new ConnectionPool(5);
+        if (lazy == null) {
+            lazy = new ConnectionPool(5);
             logger.info("Lazy initialized new connection pool");
         }
-        return instance;
+        return lazy;
     }
 
     public CompletableFuture<Connection> getConnection() {
